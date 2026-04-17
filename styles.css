@@ -1,0 +1,162 @@
+
+
+body {
+  
+    
+    background: linear-gradient(to right, rgb(0, 0, 0) 70%, #ff8800 30%);
+    margin: 0;
+    padding: 20px;
+
+}
+
+:root{
+
+    --color-principal:#ff8800;
+
+}
+
+.primeraDivision{
+
+    display: flex;
+    color: aliceblue;
+    justify-self: left;
+    font-size: 10px;
+    padding: 3px 12px;
+    position: sticky;
+    text-shadow: var(--color-principal);
+
+}
+
+.primertitulo:hover{
+
+    color: var(--color-principal);
+    transition-delay: 0.1s;
+
+}
+
+
+.presentacion{
+    display: flex;
+    color: aliceblue;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;   padding: 10px 40px;
+    font-size: 10px;
+   
+}
+
+.textopresentacion{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: left;
+    gap: 20px;
+    font-size: 2rem;
+    color: aliceblue;
+    min-width: 300px;
+    margin: 0 auto;
+    /* padding: 150px; */
+    
+}
+
+
+
+.imgperfil{
+  
+    
+    border: 2px;
+    background-color: #000000;
+    border-radius: 50%;
+    border-color:solid, #ff8800 ;
+    height: auto;
+    /*display: block;*/
+    min-width: 400px;
+    overflow: hidden;
+}
+
+.imgperfil img{
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  filter: drop-shadow(2px 4px 6px gray);
+}
+
+@media (max-width:700px){
+  .presentacion{
+    flex-direction: column;
+  }
+
+  /* .imgperfil img{
+    max-width: 200px;
+  } */
+}
+
+
+.hire{
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+
+}
+
+.hire::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-principal);
+  transition: 0.5s ease;
+}
+
+.hire:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.hire:hover::before {
+  width: 100%;
+}
+
+.hire::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color:var(--color-principal);
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.hire:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+
+.menu-navegacion{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color:black;
+    padding: 0px 50px;
+    position: relative;
+    text-align: center;
+    width:fit-content;
+    margin: 20px auto;
+}
+
+.menu-navegacion a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  padding: 0 20px;
+}
