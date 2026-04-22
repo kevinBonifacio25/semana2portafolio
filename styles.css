@@ -2,10 +2,10 @@
 
 body {
   
-    
-    background: linear-gradient(to right, rgb(0, 0, 0) 70%, #ff8800 30%);
-    margin: 0;
-    padding: 20px;
+
+  background-color: black;
+  margin: 0;
+  padding: 20px;
 
 }
 
@@ -20,10 +20,16 @@ body {
     display: flex;
     color: aliceblue;
     justify-self: left;
+    justify-content: space-between; /*coloca el texto de una lado y el menu del otro*/
+    align-items: center; /*lo alinea verticalmente en el centro*/
+    gap: 50px; /*cantidad de espacio entre cajas*/
+    flex-wrap: wrap;/* permite que la pantalla responda de forma responsiva*/
     font-size: 10px;
     padding: 3px 12px;
+    text-shadow: var(--color-principal); 
     position: sticky;
-    text-shadow: var(--color-principal);
+    top: 0;           /*hace que el menu se quede pegado justo al inicio */
+    z-index: 1000;  /* hace que el menu pase por encima de toda la pagina*/
 
 }
 
@@ -55,27 +61,24 @@ body {
     font-size: 2rem;
     color: aliceblue;
     min-width: 300px;
-    margin: 0 auto;
-    /* padding: 150px; */
-    
+    margin: 0 auto;   
 }
 
 
-
-.imgperfil{
+.hero-imagen{
+  display: flex;
+  justify-items: center;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-principal);
+  box-shadow: 0 0 25px var(--color-principal);
+  background-color: var(--color-principal);
   
-    
-    border: 2px;
-    background-color: #000000;
-    border-radius: 50%;
-    border-color:solid, #ff8800 ;
-    height: auto;
-    /*display: block;*/
-    min-width: 400px;
-    overflow: hidden;
 }
 
-.imgperfil img{
+.hero-imagen img{
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   filter: drop-shadow(2px 4px 6px gray);
 }
@@ -85,18 +88,17 @@ body {
     flex-direction: column;
   }
 
-  /* .imgperfil img{
-    max-width: 200px;
-  } */
 }
 
 
 .hire{
     font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
     background: transparent;
+    text-decoration: none;
     border: none;
     padding: 1em 1.5em;
-    color: #ffedd3;
+    color: var(--color-principal);
     text-transform: uppercase;
     position: relative;
     transition: 0.5s ease;
@@ -116,7 +118,7 @@ body {
 }
 
 .hire:hover {
-  color: #1e1e2b;
+  color: #ffffff;
   transition-delay: 0.5s;
 }
 
@@ -143,20 +145,226 @@ body {
 }
 
 
+.menu{
+  display: grid;
+  justify-items: center;
+}
+
+
 .menu-navegacion{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background-color:black;
-    padding: 0px 50px;
-    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0px 20px;
+    /*position: relative;*/
     text-align: center;
+    /*justify-content: end;*/
     width:fit-content;
     margin: 20px auto;
+    gap: 10px;
+    
+   
 }
 
 .menu-navegacion a {
   color: white;
   text-decoration: none;
   font-family: Arial, sans-serif;
-  padding: 0 20px;
+  padding: 10px 20px; 
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-navegacion a::before{
+ content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-principal);
+  transition: 0.5s ease;
+}
+
+
+.menu-navegacion:hover{
+   
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.menu-navegacion :hover::before {
+  width: 100%;
+}
+
+
+.menu-navegacion a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color:var(--color-principal);
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+
+.menu-navegacion a:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+#aboutme{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: left;
+  width: fit-content;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+ 
+}
+
+.titulo-aboutme{
+  display: flex;
+  justify-items: left;
+  color: whitesmoke;
+  font-size: 2rem;
+  
+}
+
+#projetcs{
+  border: 1px solid var(--color-principal);
+  color: var(--color-principal);
+}
+
+#mostrarContact{
+  border: 1px solid var(--color-principal);
+  color: var(--color-principal);
+}
+
+
+
+/*contacto estilos*/
+
+
+/* FORMULARIO */
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    background: var(--color-caja);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--color-secundario);
+}
+
+/* INPUT GROUP */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2c5570;
+    outline: none;
+    border-radius: 10px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* FOCUS */
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: var(--color-acento);
+    background: #2f2f2f;
+}
+
+/* LABELS */
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #888;
+    font-size: 13px;
+    pointer-events: none;
+    transition: 0.3s;
+    background: var(--color-caja);
+    padding: 0 5px;
+}
+
+/* ANIMACIÓN LABEL */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+    top: -8px;
+    font-size: 11px;
+    color: var(--color-acento);
+}
+
+/* BOTÓN */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--color-acento);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #4a8fd9;
+    transform: scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .contact-form {
+        padding: 20px;
+    }
+}
+/* CONTENEDOR GENERAL */
+.contact-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+/* FORMULARIO */
+.form-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
 }
