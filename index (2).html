@@ -19,15 +19,14 @@
         <div class="menu">
                 <nav class="menu-navegacion">
                     
-                        <a href="#mostrarAboutMe">about me</a> <!-- Tu página principal -->
-                        <a href="mascotas.html" target="_blank" rel="noopener noreferrer">pets</a> <!-- La nueva página -->
-                        <a href="#mostrarProyecto">projects</a><!-- Esto se queda en la misma página -->
-                        <a href="#mostrarContact">contact</a>
-                        <a href="https://github.com/kevinBonifacio25" target="_blank" rel="noopener noreferrer">Git Hub</a>
+                        <a href="#aboutme">about me</a> <!-- página principal -->
+                        <a href="mascotas.html" target="_blank" rel="noopener noreferrer">pets</a> <!--página externa -->
+                        <a href="#projetcs">projects</a><!-- página principal -->
+                        <a href="https://github.com/kevinBonifacio25" target="_blank" rel="noopener noreferrer">Git Hub</a> <!--pagina externa a github-->
                     
                 </nav>
                 
-            </div>
+        </div>
 
     </div>
 
@@ -35,16 +34,54 @@
     <section class="presentacion">
         <div class="textopresentacion">
             <p class="hello">Hello <span style="color:  rgb(255, 136, 0); font-size: 3rem;;">I'm kevin</span>
-                 Future web developer and data analyst 
+                 Future web developer and data analyst. 
             </p>
-            <button class="hire">Hire me</button>
+
+        
+            <a href="#mostrarContact" class="hire">Contact me</a><!--página principal -->
+        
         </div>
         
-        <div class="imgperfil">
-            <img src="img/fotoperfil.png" alt="jpeg">
-        </div>
+        <img src="src/fotoperfil.png" alt="jpeg" class="hero-imagen">
         
     </section>
+
+
+    <section>
+        <div id="aboutme">
+            <h2 class="titulo-aboutme">About Me</h2>
+            <p>i'm a passionate web developer and data analyst.</p>
+        </div>
+    </section>
+<br>
+    <section>
+        <div id="projetcs">
+            <h2>Projects</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vel? Aut fuga omnis assumenda perferendis sed, nesciunt consequatur rem quasi nam quisquam modi consequuntur temporibus voluptatum commodi expedita? Aliquid, ratione?</p>
+        </div>
+    </section>
+<br>
+    <div class="contact-section">
+    
+    <!-- FORMULARIO -->
+    <div class="form-container">
+        <form class="contact-form">
+            <h2>📩 Contáctanos</h2>
+            <p>Déjanos tu mensaje y te responderemos pronto</p>
+
+            <div class="input-group">
+                <input type="text" required placeholder=" ">
+                <label>Nombre completo</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required placeholder=" ">
+                <label>Correo electrónico</label>
+            </div>
+
+           <button type="submit"> Submit </button>
+        </form>
+    </div>
   
 </body>
 </html>
