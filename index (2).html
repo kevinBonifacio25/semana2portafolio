@@ -18,7 +18,7 @@
 
         <div class="menu">
                 <nav class="menu-navegacion">
-                    
+                        
                         <a href="#aboutme">about me</a> <!-- página principal -->
                         <a href="mascotas.html" target="_blank" rel="noopener noreferrer">pets</a> <!--página externa -->
                         <a href="#projetcs">projects</a><!-- página principal -->
@@ -38,22 +38,29 @@
             </p>
 
         
-            <a href="#mostrarContact" class="hire">Contact me</a><!--página principal -->
+            <a href="#contact-section" class="hire">Contact me</a><!--página principal -->
         
         </div>
         
-        <img src="src/fotoperfil.png" alt="jpeg" class="hero-imagen">
+        <img src="scr/fotoperfil.png" alt="jpeg" class="hero-imagen">
         
     </section>
 
-
-    <section>
+<hr>
+<br>
+    <section class="aboutme1"> <!--aqui defino la division que contiene la imagen y descripcion del about Me-->
         <div id="aboutme">
             <h2 class="titulo-aboutme">About Me</h2>
             <p>i'm a passionate web developer and data analyst.</p>
         </div>
+
+        <div>
+            <img class="imagen-aboutme" src="scr/aboutme-removebg-preview.png" alt="png">
+        </div>
     </section>
+
 <br>
+
     <section>
         <div id="projetcs">
             <h2>Projects</h2>
@@ -61,27 +68,30 @@
         </div>
     </section>
 <br>
-    <div class="contact-section">
+
+    <div id="contact-section">
     
     <!-- FORMULARIO -->
-    <div class="form-container">
-        <form class="contact-form">
-            <h2>📩 Contáctanos</h2>
-            <p>Déjanos tu mensaje y te responderemos pronto</p>
+        <div class="form-container">
+            <form class="contact-form">
+                <h2>Contáctanos</h2>
+                <p>Déjanos tu mensaje y te responderemos pronto</p>
 
-            <div class="input-group">
-                <input type="text" required placeholder=" ">
-                <label>Nombre completo</label>
-            </div>
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Nombre completo</label>
+                </div>
 
-            <div class="input-group">
-                <input type="email" required placeholder=" ">
-                <label>Correo electrónico</label>
-            </div>
+                <div class="input-group">
+                    <input type="email" required placeholder=" ">
+                    <label>Correo electrónico</label>
+                </div>
 
-           <button type="submit"> Submit </button>
-        </form>
+            <button type="submit"> Submit </button>
+            </form>
+        </div>
     </div>
   
 </body>
 </html>
+
